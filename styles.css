@@ -1,0 +1,111 @@
+:root {
+  color-scheme: light dark;
+  --bg: #f5f7fb;
+  --card: #ffffff;
+  --text: #19202c;
+  --accent: #2d6cdf;
+  --warn: #8f4c00;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, Segoe UI, Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.header {
+  padding: 1.5rem;
+  background: #102a56;
+  color: #eef4ff;
+}
+
+.warning {
+  background: #ffe8c9;
+  color: var(--warn);
+  padding: 0.6rem;
+  border-radius: 0.5rem;
+  display: inline-block;
+}
+
+.container {
+  max-width: 980px;
+  margin: 1.2rem auto;
+  padding: 0 1rem 1.6rem;
+}
+
+.tabs {
+  display: flex;
+  gap: 0.6rem;
+  margin-bottom: 1rem;
+}
+
+.tab {
+  border: 1px solid #c9d5f2;
+  background: var(--card);
+  color: var(--text);
+  padding: 0.55rem 1rem;
+  border-radius: 0.65rem;
+  cursor: pointer;
+}
+
+.tab.active {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+
+.panel,
+.output-wrap {
+  background: var(--card);
+  border-radius: 0.8rem;
+  padding: 1rem;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  margin-bottom: 1rem;
+}
+
+.panel {
+  display: none;
+}
+
+.panel.active {
+  display: block;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.8rem;
+  font-weight: 600;
+}
+
+textarea,
+input {
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 0.4rem;
+  padding: 0.55rem;
+  border: 1px solid #c7cdd8;
+  border-radius: 0.55rem;
+  font: inherit;
+  background: #fff;
+  color: #1a1a1a;
+}
+
+button[type='submit'],
+#copyOutput {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 0.55rem;
+  padding: 0.6rem 1rem;
+  cursor: pointer;
+}
+
+pre {
+  white-space: pre-wrap;
+  background: #101827;
+  color: #edf3ff;
+  border-radius: 0.6rem;
+  padding: 0.9rem;
+  min-height: 140px;
+}
