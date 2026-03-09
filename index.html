@@ -9,6 +9,7 @@
   <body>
     <header class="header">
       <h1>Med-AI Clinical Assistant</h1>
+      <p id="appStatus" class="status">App status: loading...</p>
       <p>
         Educational decision-support tool for licensed clinicians and supervised medical students.
       </p>
@@ -49,7 +50,8 @@
         <h2>Diagnosis-Based Drug Class Guidance</h2>
         <form id="treatmentForm">
           <label>
-            Confirmed diagnosis
+    <noscript><p class="warning">JavaScript is disabled. Enable JavaScript to use Med-AI.</p></noscript>
+    <script src="app.js" onerror="document.getElementById('appStatus').textContent='App status: failed to load script';"></script>
             <input id="confirmedDiagnosis" type="text" placeholder="e.g., Community-acquired pneumonia" />
           </label>
 

@@ -6,6 +6,9 @@
   const treatmentForm = document.getElementById('treatmentForm');
   const copyOutput = document.getElementById('copyOutput');
 
+  const appStatus = document.getElementById('appStatus');
+  if (appStatus) appStatus.textContent = 'App status: ready';
+
   if (!output || !diagnosisForm || !treatmentForm) {
     return;
   }

@@ -1,25 +1,25 @@
 # med-AI
 
-A lightweight web prototype for doctors and undergraduate medical students with two workflows:
+## How to run (must do this)
 
-1. **Differential & Exams**
-   - Enter complaints, exam findings, and available data.
-   - Click **Run Analysis** to get immediate on-page differential suggestions, tests, and red-flag reminders.
+Open `http://localhost:8000` in browser.
 
-2. **Treatment Classes & Safety**
-   - Enter confirmed diagnosis + complications.
-   - Click **Run Analysis** to get starter treatment-class guidance (brand/generic examples, active ingredients, frequency/duration ranges, adverse effects, contraindications, and adjunctive options).
-   - If diagnosis text does not match a starter protocol, the app returns a safe generic planning template instead of failing.
+## Quick verify it is working
 
-> This project is an educational decision-support scaffold. It is **not** a medical device and should never replace licensed clinical judgment, local protocols, or emergency escalation.
+1. Confirm the page shows **App status: ready**.
+2. Click **Load Example** in any tab.
+3. Click **Run Analysis**.
+4. You should see generated output in **Clinical Output**.
 
-## Run locally
+## If still not working
 
-```bash
-python3 -m http.server 8000
-```
+- If status says `failed to load script`, refresh and ensure `app.js` exists in the same folder.
+- Make sure you opened `http://localhost:8000` (not `README.md` file directly).
+- If port 8000 is occupied, run:
+  - `python3 -m http.server 8080`
+  - then open `http://localhost:8080`.
 
-Then open `http://localhost:8000`.
+Educational decision-support scaffold only; not an autonomous diagnosis/prescribing tool.
 
 ## Starter diagnosis matching
 
