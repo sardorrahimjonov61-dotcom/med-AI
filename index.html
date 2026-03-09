@@ -41,7 +41,7 @@
             <textarea id="currentWorkup" rows="3" placeholder="e.g., WBC 14k, CXR pending"></textarea>
           </label>
 
-          <button type="submit">Generate AI Prompt</button>
+          <button type="submit">Run Analysis</button>
         </form>
       </section>
 
@@ -63,13 +63,13 @@
             <textarea id="safetyData" rows="4" placeholder="e.g., penicillin allergy; used azithromycin 2 weeks ago"></textarea>
           </label>
 
-          <button type="submit">Generate AI Prompt</button>
+          <button type="submit">Run Analysis</button>
         </form>
       </section>
 
       <section class="output-wrap">
-        <h2>Generated Prompt (send this to your LLM backend)</h2>
-        <pre id="output">Fill a form and click "Generate AI Prompt".</pre>
+        <h2>Clinical Output</h2>
+        <pre id="output">Fill a form and click "Run Analysis".</pre>
         <button id="copyOutput" type="button">Copy Prompt</button>
       </section>
     </main>
