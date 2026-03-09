@@ -1,23 +1,22 @@
 # med-AI
 
-## How to run (must do this)
+## Run (reliable)
 
-Open `http://localhost:8000` in browser.
+python3 serve.py --port 8000
 
-## Quick verify it is working
+Open `http://127.0.0.1:8000`.
 
-1. Confirm the page shows **App status: ready**.
-2. Click **Load Example** in any tab.
-3. Click **Run Analysis**.
-4. You should see generated output in **Clinical Output**.
+This `serve.py` always serves files from the repository folder, so you avoid the common "Not Found" issue caused by starting a server from the wrong directory.
+## Quick check
+
+1. Confirm page shows **App status: ready**.
+2. Click **Load Example** in either tab.
+4. Output appears in **Clinical Output**.
 
 ## If still not working
 
-- If status says `failed to load script`, refresh and ensure `app.js` exists in the same folder.
-- Make sure you opened `http://localhost:8000` (not `README.md` file directly).
-- If port 8000 is occupied, run:
-  - `python3 -m http.server 8080`
-  - then open `http://localhost:8080`.
+- If status says `failed to load script`, ensure `app.js` exists beside `index.html`.
+- If port 8000 is busy: `python3 serve.py --port 8080` then open `http://127.0.0.1:8080`.
 
 Educational decision-support scaffold only; not an autonomous diagnosis/prescribing tool.
 
