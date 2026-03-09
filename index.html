@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Med-AI Clinical Assistant</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <h1>Med-AI Clinical Assistant</h1>
+      <p id="appStatus" class="status">App status: loading...</p>
+      <p>
+        Educational decision-support tool for licensed clinicians and supervised medical students.
+      </p>
+      <p class="warning">
+        ⚠️ This tool does not replace clinical judgment, local guidelines, or specialist consultation.
+      </p>
+    </header>
+
+    <main class="container">
+      <nav class="tabs" aria-label="Clinical modes">
+        <button class="tab active" data-tab="diagnosis">1) Differential & Exams</button>
+        <button class="tab" data-tab="treatment">2) Treatment Classes & Safety</button>
+      </nav>
+
+      <section id="diagnosis" class="panel active" aria-labelledby="Differential and exams">
+        <h2>Clinical Clarification: Differential Diagnosis</h2>
+        <form id="diagnosisForm">
+          <label>
+            Patient complaints and history
+            <textarea id="complaints" rows="5" placeholder="e.g., fever, productive cough, pleuritic chest pain, 3 days"></textarea>
+          </label>
+
+          <label>
+            Vital signs and exam findings
+            <textarea id="vitals" rows="4" placeholder="e.g., Temp 38.9°C, HR 112, RR 24, crackles right lower lobe"></textarea>
+          </label>
+
+          <label>
+            Available labs/imaging (optional)
+            <textarea id="currentWorkup" rows="3" placeholder="e.g., WBC 14k, CXR pending"></textarea>
+          </label>
+
+          <button type="submit">Run Analysis</button>
+        </form>
+      </section>
+
+      <section id="treatment" class="panel" aria-labelledby="Treatment and safety">
+        <h2>Diagnosis-Based Drug Class Guidance</h2>
+        <form id="treatmentForm">
+          <label>
+    <noscript><p class="warning">JavaScript is disabled. Enable JavaScript to use Med-AI.</p></noscript>
+    <script src="app.js" onerror="document.getElementById('appStatus').textContent='App status: failed to load script';"></script>
+            <input id="confirmedDiagnosis" type="text" placeholder="e.g., Community-acquired pneumonia" />
+          </label>
+
+          <label>
+            Complications / second problem
+            <textarea id="complications" rows="3" placeholder="e.g., mild AKI, type 2 diabetes"></textarea>
+          </label>
+
+          <label>
+            Drug allergies, recent antibiotic exposure, and comorbidities
+            <textarea id="safetyData" rows="4" placeholder="e.g., penicillin allergy; used azithromycin 2 weeks ago"></textarea>
+          </label>
+
+          <button type="submit">Run Analysis</button>
+        </form>
+      </section>
+
+      <section class="output-wrap">
+        <h2>Clinical Output</h2>
+        <pre id="output">Fill a form and click "Run Analysis".</pre>
+        <button id="copyOutput" type="button">Copy Prompt</button>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
